@@ -51,14 +51,10 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="relative h-[400px] w-full">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg opacity-20"></div>
+            <div className="relative h-[500px] w-full">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto bg-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-4xl">👨‍💻</span>
-                  </div>
-                  <p className="mt-4 text-gray-300">ETL Developer & Data Integration Specialist</p>
+                <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-4 border-blue-500 shadow-xl bg-gray-800 flex items-center justify-center">
+                  <span className="text-6xl">👨‍💻</span>
                 </div>
               </div>
             </div>
