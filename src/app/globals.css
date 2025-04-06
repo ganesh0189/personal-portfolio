@@ -7,6 +7,7 @@
   --primary-dark: #2563eb;
   --secondary: #10b981;
   --background: #ffffff;
+  --background-rgb: 255, 255, 255;
   --card-background: #ffffff;
   --foreground: #1f2937;
   --muted: #6b7280;
@@ -20,6 +21,7 @@
   --primary-dark: #2563eb;
   --secondary: #34d399;
   --background: #0f172a;
+  --background-rgb: 15, 23, 42;
   --card-background: #1e293b;
   --foreground: #f8fafc;
   --muted: #94a3b8;
@@ -29,8 +31,13 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
   body {
-    @apply bg-background text-foreground transition-colors duration-200 font-sans;
+    @apply bg-background text-foreground transition-colors duration-200 font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -40,11 +47,11 @@
 
 @layer components {
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }
   
   .btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 w-full sm:w-auto;
   }
   
   .btn-primary {
@@ -56,15 +63,15 @@
   }
   
   .section {
-    @apply py-16 sm:py-24;
+    @apply py-12 sm:py-16 lg:py-24;
   }
   
   .heading {
-    @apply text-4xl sm:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
   }
 
   .card {
-    @apply bg-card-background border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200;
+    @apply bg-card-background border border-border rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-200;
   }
 
   .section-bg {
@@ -164,4 +171,41 @@ html {
 /* Badge styles */
 .badge-primary {
   @apply bg-primary text-white px-3 py-1 rounded-full text-sm font-medium shadow-sm;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  @apply fixed inset-0 bg-background backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-6;
+  background-color: rgba(var(--background-rgb), 0.95);
+}
+
+/* Responsive grid */
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+/* Responsive text */
+.responsive-text {
+  @apply text-base sm:text-lg lg:text-xl;
+}
+
+/* Responsive padding */
+.responsive-padding {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+/* Responsive margin */
+.responsive-margin {
+  @apply m-4 sm:m-6 lg:m-8;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 } 
