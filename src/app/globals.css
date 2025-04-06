@@ -3,19 +3,69 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 17, 24, 39;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #10b981;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --accent: #f59e0b;
+  --border: #e2e8f0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
-  min-height: 100vh;
+[data-theme='dark'] {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #34d399;
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #fbbf24;
+  --border: #1e293b;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  
+  .nav-link {
+    @apply text-muted hover:text-foreground transition-colors duration-200;
+  }
+  
+  .section {
+    @apply py-16 sm:py-24;
+  }
+  
+  .heading {
+    @apply text-3xl sm:text-4xl font-bold mb-8;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 border border-border rounded-lg p-6 transition-all duration-200;
+  }
+}
+
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-lg border border-border;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
 }
 
 /* Custom scrollbar */
@@ -24,16 +74,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(31, 41, 55);
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(55, 65, 81);
-  border-radius: 4px;
+  @apply bg-gray-300 dark:bg-gray-600 rounded;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(75, 85, 99);
+  @apply bg-gray-400 dark:bg-gray-500;
 }
 
 /* Smooth scrolling */
@@ -70,10 +119,6 @@ html {
 }
 
 /* Custom button styles */
-.btn-primary {
-  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors;
-}
-
 .btn-secondary {
   @apply bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors;
 } 

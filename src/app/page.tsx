@@ -3,84 +3,139 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl font-bold">
-                Hi, I'm{' '}
-                <span className="text-blue-500">Lakshmi Sai Ganesh Bollem</span>
-              </h1>
-              <p className="text-xl text-gray-300">
-                ETL Developer specializing in data integration, migration, and Python/SQL development
-              </p>
-              <div className="flex space-x-4">
-                <Link
-                  href="/contact"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                >
-                  Get in Touch
-                </Link>
-                <Link
-                  href="/projects"
-                  className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                >
-                  View Projects
-                </Link>
-              </div>
-              <div className="flex space-x-4 pt-4">
-                <a
-                  href="mailto:ganesh.bollem189@gmail.com"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      <section className="container py-20 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold">
+              Hi, I'm{' '}
+              <span className="gradient-text">
+                Lakshmi Sai Ganesh
+              </span>
+            </h1>
+            <p className="text-xl text-muted">
+              ETL Developer specializing in data integration, migration, and Python/SQL development.
+              Transforming complex data challenges into efficient solutions.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/contact" className="btn btn-primary">
+                Get in Touch
+              </Link>
+              <Link href="/projects" className="btn border border-border hover:bg-gray-50 dark:hover:bg-gray-800">
+                View Projects
+              </Link>
+              <a
+                href="https://github.com/ganesh0189"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn border border-border hover:bg-gray-50 dark:hover:bg-gray-800"
+              >
+                <span className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                   </svg>
-                </a>
+                  GitHub
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="relative aspect-square max-w-md mx-auto animate-fade-in">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl" />
+            <div className="relative rounded-full overflow-hidden border-4 border-background shadow-xl">
+              <Image
+                src="/images/profile.jpg"
+                alt="Lakshmi Sai Ganesh Bollem"
+                width={500}
+                height={500}
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Overview */}
+      <section className="container py-20 animate-slide-up">
+        <h2 className="heading text-center">Core Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+          {[
+            { name: 'Python Development', level: 'Advanced' },
+            { name: 'SQL & Database Design', level: 'Advanced' },
+            { name: 'ETL Pipelines', level: 'Advanced' },
+            { name: 'Data Migration', level: 'Advanced' },
+            { name: 'Azure Cloud', level: 'Intermediate' },
+            { name: 'REST APIs', level: 'Intermediate' },
+            { name: 'PySpark', level: 'Intermediate' },
+            { name: 'Data Integration', level: 'Advanced' },
+          ].map((skill) => (
+            <div
+              key={skill.name}
+              className="card hover:scale-105 transition-transform"
+            >
+              <h3 className="font-semibold mb-2">{skill.name}</h3>
+              <span className="text-sm text-muted">{skill.level}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* GitHub Section */}
+      <section className="container py-20">
+        <div className="card animate-slide-up">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="/images/profile.jpg"
+                alt="GitHub Profile"
+                width={100}
+                height={100}
+                className="rounded-full"
+              />
+            </div>
+            <div className="flex-grow space-y-4">
+              <h2 className="text-2xl font-bold">Open Source Contributions</h2>
+              <p className="text-muted">
+                Check out my open-source projects and contributions on GitHub. I'm passionate about
+                building tools that make data integration and ETL processes more efficient.
+              </p>
+              <div className="flex gap-4">
                 <a
-                  href="https://www.linkedin.com/in/ganesh-bollem-706103239"
+                  href="https://github.com/ganesh0189"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="btn btn-primary"
                 >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
+                  View GitHub Profile
                 </a>
-              </div>
-            </div>
-            <div className="relative h-[500px] w-full">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-4 border-blue-500 shadow-xl bg-gray-800 flex items-center justify-center">
-                  <span className="text-6xl">👨‍💻</span>
-                </div>
+                <a
+                  href="https://github.com/ganesh0189?tab=repositories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn border border-border hover:bg-gray-50 dark:hover:bg-gray-800"
+                >
+                  View Repositories
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Stats Section */}
-      <section className="py-16 bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">Experience</h3>
-              <p className="text-gray-300">ETL Developer at Bendito SoftTech</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">Expertise</h3>
-              <p className="text-gray-300">Python, SQL, PySpark, REST APIs</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">Education</h3>
-              <p className="text-gray-300">B.Tech in Electronics and Communications</p>
-            </div>
-          </div>
+      {/* CTA Section */}
+      <section className="container py-20">
+        <div className="text-center space-y-8 animate-slide-up">
+          <h2 className="heading">Let's Work Together</h2>
+          <p className="text-xl text-muted max-w-2xl mx-auto">
+            Looking for an ETL Developer who can transform your data challenges into opportunities?
+            Let's connect and discuss how I can help your organization.
+          </p>
+          <Link href="/contact" className="btn btn-primary inline-block">
+            Contact Me
+          </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 } 
