@@ -1,109 +1,89 @@
 export default function Projects() {
-  const projects = [
-    {
-      title: "ATS-HCM Integration System",
-      description: "Developed an automated integration system between Applicant Tracking System (ATS) and Human Capital Management (HCM) systems using Python and SQL.",
-      technologies: ["Python", "SQL", "REST APIs", "Azure"],
-      highlights: [
-        "Implemented ETL processes for seamless data migration",
-        "Developed webhook system for real-time data synchronization",
-        "Optimized data processing using PySpark",
-        "Achieved 99.9% data accuracy in migrations"
-      ]
-    },
-    {
-      title: "Data Migration Automation",
-      description: "Created an automated data migration pipeline for transferring historical data between HR systems.",
-      technologies: ["Python", "PySpark", "Azure", "SQL"],
-      highlights: [
-        "Built scalable data processing pipeline",
-        "Implemented data validation and error handling",
-        "Reduced migration time by 60%",
-        "Handled complex data transformations"
-      ]
-    },
-    {
-      title: "Real-time Integration Framework",
-      description: "Developed a framework for real-time data integration between multiple HR systems.",
-      technologies: ["Python", "REST APIs", "Azure", "SQL"],
-      highlights: [
-        "Created event-driven architecture",
-        "Implemented robust error handling",
-        "Achieved sub-second data synchronization",
-        "Built monitoring and alerting system"
-      ]
-    }
-  ];
-
   return (
-    <main className="min-h-screen bg-gray-900 text-white pt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-8">Projects & Case Studies</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-gray-800 rounded-lg overflow-hidden">
+    <main className="min-h-screen bg-background text-foreground">
+      <div className="gradient-bg">
+        <div className="container py-24">
+          <h1 className="heading text-balance">Projects</h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Project 1 */}
+            <div className="card card-hover animate-fadeIn">
               <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-3">{project.title}</h2>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                
-                <div className="mb-4">
-                  <h3 className="text-lg font-medium mb-2">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">Data Migration Project</h2>
+                <p className="text-muted mb-4">
+                  Led a complex data migration project at Accenture, successfully transferring data from legacy systems to modern cloud infrastructure.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="badge-primary hover:bg-primary-dark transition-colors">Python</span>
+                  <span className="badge-primary hover:bg-primary-dark transition-colors">Azure</span>
+                  <span className="badge-primary hover:bg-primary-dark transition-colors">SQL</span>
                 </div>
-
-                <div>
-                  <h3 className="text-lg font-medium mb-2">Key Highlights</h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1">
-                    {project.highlights.map((highlight, highlightIndex) => (
-                      <li key={highlightIndex}>{highlight}</li>
-                    ))}
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-foreground">Key Highlights:</h3>
+                  <ul className="list-disc list-inside text-muted space-y-1">
+                    <li>Migrated 100+ TB of data with 99.99% accuracy</li>
+                    <li>Reduced processing processing time by 40%</li>
+                    <li>Implemented automated validation checks</li>
                   </ul>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Additional Skills Section */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">Technical Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3">Programming</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li>Python</li>
-                <li>C</li>
-                <li>PySpark</li>
-              </ul>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3">Databases</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li>MySQL</li>
-                <li>SQL Server</li>
-                <li>Data Warehousing</li>
-              </ul>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3">Tools & Platforms</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li>Microsoft Azure</li>
-                <li>REST APIs</li>
-                <li>MS Excel</li>
-              </ul>
+            {/* Project 2 */}
+            <div className="card card-hover animate-fadeIn" style={{ animationDelay: '200ms' }}>
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">ETL Pipeline Development</h2>
+                <p className="text-muted mb-4">
+                  Designed and implemented robust ETL pipelines for processing large-scale financial data.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="badge-primary hover:bg-primary-dark transition-colors">PySpark</span>
+                  <span className="badge-primary hover:bg-primary-dark transition-colors">Azure Data Factory</span>
+                  <span className="badge-primary hover:bg-primary-dark transition-colors">SQL Server</span>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-foreground">Key Highlights:</h3>
+                  <ul className="list-disc list-inside text-muted space-y-1">
+                    <li>Processed 1M+ records daily</li>
+                    <li>Achieved 99.9% data quality score</li>
+                    <li>Reduced manual intervention by 80%</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
+
+          {/* Technical Expertise */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-semibold mb-8 text-foreground">Technical Expertise</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="card card-hover animate-fadeIn" style={{ animationDelay: '400ms' }}>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Programming</h3>
+                <ul className="list-disc list-inside text-muted space-y-2">
+                  <li>Python Development</li>
+                  <li>SQL & Database Design</li>
+                  <li>ETL Development</li>
+                </ul>
+              </div>
+              <div className="card card-hover animate-fadeIn" style={{ animationDelay: '500ms' }}>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Databases</h3>
+                <ul className="list-disc list-inside text-muted space-y-2">
+                  <li>MySQL</li>
+                  <li>SQL Server</li>
+                  <li>Data Warehousing</li>
+                </ul>
+              </div>
+              <div className="card card-hover animate-fadeIn" style={{ animationDelay: '600ms' }}>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Tools & Platforms</h3>
+                <ul className="list-disc list-inside text-muted space-y-2">
+                  <li>Azure Cloud</li>
+                  <li>Git & Version Control</li>
+                  <li>Azure DevOps</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
